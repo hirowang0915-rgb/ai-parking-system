@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ai-parking-system         # 你的網站名稱
+    runtime: python                # 使用 Python 環境
+    plan: free                     # 使用免費方案
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn week2:app   # 啟動指令 (假設檔名是 week2.py)
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0              # 指定 Python 版本
